@@ -7,20 +7,21 @@
 /*-----------------------------------------------
 *   Base
 -----------------------------------------------*/
-body {
-
+html body .container-fluid{
+min-height:100%;
+height:100%;
 }
+
 
 /*-----------------------------------------------
 *   Navbar
 -----------------------------------------------*/
 .navbar {
-  margin-top: 10px;
+/*  margin-top: 10px;*/
   margin-bottom: 0px;
   position: absolute;
   width: 100%;
   z-index: 10;
-
 }
 
 .navbar-default{
@@ -28,6 +29,7 @@ body {
   background-image:none;
   border-color:transparent;
   box-shadow:none;
+  border-bottom: 2px solid white;
 }
 
 .navbar-brand {
@@ -40,6 +42,10 @@ body {
   font-size: 36px;
 }
 
+.navbar-default .navbar-nav > li > a:hover {
+  background-color: white;
+}  
+
 
 .navbar-default .navbar-nav > li > a {
   color: white;
@@ -50,9 +56,31 @@ body {
   text-transform: uppercase;
 }
 
-.navbar-default .navbar-nav > li > a:hover {
+.current-tab {
   background-color: white;
-}  
+  color: #333;
+}
+
+.current-font {
+  color: black !important;
+}
+
+.navbar-right .dropdown-menu {
+  left: 0 !important;
+  min-width: 0 !important;
+}
+
+.top-nav-collapse {
+  -webkit-transition: background .9s ease-in-out;
+  -moz-transition: background .9s ease-in-out;
+  transition: background .9s ease-in-out;
+  background-color: #000;
+  position: static;
+  z-index: 0;
+  border-radius: 0;
+}
+
+
 
 
 /*-----------------------------------------------
@@ -72,5 +100,66 @@ a.carousel-control.left, .carousel-control.right {
 background-image: none !important;
 background-repeat: none !important;
 }
+
+/*-----------------------------------------------
+*   Portfolio
+-----------------------------------------------*/
+#portfolio{
+  background-color: #000;
+  height: 800px;
+}
+
+
+.portfolio-content{
+  margin-top: 200px;
+}
+
+.portfolio-item {
+  background-color: red;
+  border-radius: 2px;
+  display: inline-block;
+  height: 300px;
+  margin-right: 5px;
+  margin-left: 5px;
+  width: 160px;
+  z-index: 5;
+}
+
+.portfolio-content:first-child {
+  margin-left: 60px;
+}
+
+#tv-spots {
+  -webkit-animation-delay: .5s;
+  -moz-animation-delay: .5s;
+  animation-delay: .5s;
+}
+
+#online {
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+#offline {
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+#misc {
+  -webkit-animation-delay: .5s;
+  -moz-animation-delay: .5s;
+  animation-delay: .5s;
+}
+
+.portfolio-content li:hover {
+  -webkit-transform: translate(100px, 100px);
+  -moz-transform: translate(100px, 100px);
+  transform: translate(100px, 100px);
+}
+
+
+
 
 
