@@ -133,6 +133,7 @@ background-repeat: none !important;
   -webkit-animation-delay: .5s;
   -moz-animation-delay: .5s;
   animation-delay: .5s;
+  z-index: 2;
 }
 
 #online {
@@ -153,13 +154,16 @@ background-repeat: none !important;
   animation-delay: .5s;
 }
 
-.portfolio-content li:hover {
-  -webkit-transform: translate(100px, 100px);
-  -moz-transform: translate(100px, 100px);
-  transform: translate(100px, 100px);
+
+#test {
+  width: 200px;
+  height: 200px;
+  background-color: blue;
 }
 
-
-
-
+.hover {
+  position: absolute;
+  z-index: 5;
+  background-color: yellow !important; 
+}
 

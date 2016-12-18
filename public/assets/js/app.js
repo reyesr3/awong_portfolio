@@ -1,3 +1,4 @@
+
 function collapseNavbar() {
     $(".navbar-nav li a" ).on( "click", function() {
         if(!$(".navbar-default").hasClass("top-nav-collapse")) {
@@ -16,22 +17,55 @@ function currentTab() {
 }
 
 $(document).ready(function(){
+
   collapseNavbar();
   currentTab();
 
-  $("#portfolio-nav").click(function(e){
-    e.preventDefault();
-    $.ajax({url: "/views/portfolio.html", success: function(result){
-      console.log(result);
-        $(".main-content").addClass('move-down');
-        $(".main-content").html(result);
-    }});
-  });
+  // Navbar Functions
+    $("#portfolio-nav").click(function(e){
+      var script = document.createElement('script');
 
+      e.preventDefault();
+      $.ajax({url: "/views/portfolio.html", success: function(result){
+        console.log(result);
+          $(".main-content").addClass('move-down');
+          $(".main-content").html(result);
+      }});
+
+      script.src = "assets/js/app.js";
+      script.id = "app";
+
+      $('body').append(script);
+    });
+
+
+  // $("#trailers").each(function(index, element){
+    // var test = $('#trailers'),
+    //     test2 = $('#tv-spots'),
+    //     tl   = new TimelineLite();
+      
+    // TweenLite.from(test, 1, {x: -200});
+    
+  // });
+
+
+$(document.body).on('click', '.portfolio-item', function () {
+      $(this).addClass("hover");
+});
+ 
+
+  $("#trailers").hover(function(){
+    var element = $('#trailers');
+
+      $(this).addClass('hover');
+      TweenLite.from(element, 1, {x: -100});
+  });
+  
 });
 
+// Carousel Functions 
+
 var $item = $('.carousel .item'); 
-var $portfolio = $('#portfolio-content')
 var $wHeight = $(window).height();
 $item.eq(0).addClass('active');
 $item.height($wHeight); 
