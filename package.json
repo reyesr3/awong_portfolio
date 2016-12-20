@@ -1,6 +1,9 @@
 {
   "name" : "alex-got-skillz",
   "version" : "0.0.1",
+  "scripts" : {
+    "start" : "node server.js"
+  },
   "dependencies" : {
     "express" : "latest"
   }

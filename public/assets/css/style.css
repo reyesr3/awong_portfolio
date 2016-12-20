@@ -109,12 +109,17 @@ background-repeat: none !important;
   height: 800px;
 }
 
-
-.portfolio-content{
-  margin-top: 200px;
+.random-div {
+  position: absolute;
 }
 
-.portfolio-item {
+
+#portfolio-content{
+  margin-top: 200px;
+  height: 900px;
+}
+
+#portfolio-content li {
   background-color: red;
   border-radius: 2px;
   display: inline-block;
@@ -122,7 +127,8 @@ background-repeat: none !important;
   margin-right: 5px;
   margin-left: 5px;
   width: 160px;
-  z-index: 5;
+  position: relative;
+
 }
 
 .portfolio-content:first-child {
@@ -155,15 +161,52 @@ background-repeat: none !important;
 }
 
 
-#test {
+
+
+#box-row div{
   width: 200px;
   height: 200px;
   background-color: blue;
+  margin-right: 10px;
+  display: inline-block;
+  position: relative;
+}
+
+#box-content {
+  position: absolute;
 }
 
 .hover {
-  position: absolute;
   z-index: 5;
   background-color: yellow !important; 
 }
+
+
+/* ************** */
+#trans3DDemo {
+  position:absolute;
+  top:70px;
+  left:240px;
+  width:240px;
+}
+
+#trans3DBoxes div {
+  position:relative;
+  width:60px;
+  height:60px;
+  background-color:#f60;
+  margin-right:10px;
+  margin-bottom:10px;
+  border:solid 2px #FFF;
+  display:inline-block;
+}
+
+
+
+
+
+
+
+
+
 

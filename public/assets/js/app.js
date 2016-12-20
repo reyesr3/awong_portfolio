@@ -27,9 +27,8 @@ $(document).ready(function(){
 
       e.preventDefault();
       $.ajax({url: "/views/portfolio.html", success: function(result){
-        console.log(result);
-          $(".main-content").addClass('move-down');
-          $(".main-content").html(result);
+        $(".main-content").addClass('move-down');
+        $(".main-content").html(result);
       }});
 
       script.src = "assets/js/app.js";
@@ -38,28 +37,51 @@ $(document).ready(function(){
       $('body').append(script);
     });
 
+  // Portfolio Functions
 
-  // $("#trailers").each(function(index, element){
-    // var test = $('#trailers'),
-    //     test2 = $('#tv-spots'),
-    //     tl   = new TimelineLite();
+  // Animation Intro 
+    var port_left = $('.portfolio-left'),
+        port_right = $('.portfolio-right')
       
-    // TweenLite.from(test, 1, {x: -200});
-    
-  // });
+    port_left.each(function (index, element) {
+        TweenMax.from(element, .9, {x:-200, autoAlpha:0, ease:Power1.easeInOut});
+    });
+
+    port_right.each(function (index, element) {
+        TweenMax.from(element, .9, {x:200, autoAlpha:0, ease:Power1.easeInOut});
+    });
+
+  // Hover Animation 
+  $(document.body).on('mouseover', '#portfolio-content li', function () {
+    var random = $("#random-div"), 
+        ports  = $(this),
+        tl     = new TimelineLite();
+
+    ports.each(function (index, element) {
+      TweenMax.to(element, 1, {x: -50, y:-50, ease:Power1.easeInOut});
+    });
+  
+  });
 
 
-$(document.body).on('click', '.portfolio-item', function () {
-      $(this).addClass("hover");
-});
+// $(document.body).on('click', '.portfolio-item', function () {
+//       $(this).addClass("hover");
+//       var test = $('#misc-2'),
+//         test2 = $('#tv-spots'),
+//         tl   = new TimelineLite();
+      
+//     TweenMax.from(test, 1, {z: -20}, {x: -20}, {y: -20});
+// });
  
 
-  $("#trailers").hover(function(){
-    var element = $('#trailers');
 
-      $(this).addClass('hover');
-      TweenLite.from(element, 1, {x: -100});
-  });
+
+  // $("#offline").hover(function(){
+  //   var element = $('#offline');
+
+  //     $(this).addClass('hover');
+  //     TweenLite.from(element, 1, {x: -200}, {y: -100});
+  // });
   
 });
 
