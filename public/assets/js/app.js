@@ -2,39 +2,38 @@
 function collapseNavbar() {
     $(".navbar-nav li a" ).on( "click", function() {
         if(!$(".navbar-default").hasClass("top-nav-collapse")) {
-          $(".navbar-default").addClass("top-nav-collapse");
+            $(".navbar-default").addClass("top-nav-collapse");
         };
     });
 }
 
 function currentTab() {
-  $(".navbar-nav li" ).on( "click", function() {
-    $(".navbar-nav li").removeClass("current-tab");
-    $(".navbar-nav li a").removeClass("current-font");         
-      $(this).addClass("current-tab");
-      $(this).children().addClass("current-font");
-  });
+    $(".navbar-nav li" ).on( "click", function() {
+        $(".navbar-nav li").removeClass("current-tab");
+        $(".navbar-nav li a").removeClass("current-font");         
+        $(this).addClass("current-tab");
+        $(this).children().addClass("current-font");
+    });
 }
 
 $(document).ready(function(){
+    collapseNavbar();
+    currentTab();
 
-  collapseNavbar();
-  currentTab();
-
-  // Navbar Functions
+    // Navbar Functions
     $("#portfolio-nav").click(function(e){
-      var script = document.createElement('script');
+        var script = document.createElement('script');
+        
+        e.preventDefault();
+        $.ajax({url: "/views/portfolio.html", success: function(result){
+            $(".main-content").addClass('move-down');
+            $(".main-content").html(result);
+        }});
 
-      e.preventDefault();
-      $.ajax({url: "/views/portfolio.html", success: function(result){
-        $(".main-content").addClass('move-down');
-        $(".main-content").html(result);
-      }});
+        script.src = "assets/js/app.js";
+        script.id = "app";
 
-      script.src = "assets/js/app.js";
-      script.id = "app";
-
-      $('body').append(script);
+        $('body').append(script);
     });
 
   // Portfolio Functions
@@ -44,45 +43,49 @@ $(document).ready(function(){
         port_right = $('.portfolio-right')
       
     port_left.each(function (index, element) {
-        TweenMax.from(element, .9, {x:-200, autoAlpha:0, ease:Power1.easeInOut});
+        TweenMax.from(element, 1.7, {x:200, autoAlpha:0, scale: .15, ease:Expo.easeInOut});
     });
 
     port_right.each(function (index, element) {
-        TweenMax.from(element, .9, {x:200, autoAlpha:0, ease:Power1.easeInOut});
+        TweenMax.from(element, 1.7, {x:-200, autoAlpha:0, scale: .15, ease:Expo.easeInOut});
     });
 
   // Hover Animation 
   $(document.body).on('mouseover', '#portfolio-content li', function () {
-    var random = $("#random-div"), 
-        ports  = $(this),
-        tl     = new TimelineLite();
+    var column = $("#porfolio-column"), 
+        items  = $(this);
 
-    ports.each(function (index, element) {
-      TweenMax.to(element, 1, {x: -50, y:-50, ease:Power1.easeInOut});
+
+    items.each(function (index, element) {
+        // TweenMax.to(items,0, {className:'+=hover'}); 
+
+        if($(element).hasClass('portfolio-left')) {
+            if($(element).hasClass('center')) { 
+                TweenMax.to(element, .8, {x: -10, y:-10, scale: 1.15, ease:Expo.easeInOut});
+            } else { 
+                TweenMax.to(element, .8, {x: -30, y:-10, scale: 1.15, ease:Expo.easeInOut});
+            }
+        } else {
+            if($(element).hasClass('center')) { 
+                TweenMax.to(element, .8, {x: 10, y:-10, scale: 1.15, ease:Expo.easeInOut});
+            } else {
+                TweenMax.to(element, .8, {x: 30, y: -10, scale: 1.15, ease:Expo.easeInOut}); 
+            }
+        }});
+
+        // TweenMax.to(items, 0, {className:'-=hover'}); 
+  
+    });
+
+    $(document.body).on('mouseleave', '#portfolio-content li', function () {
+    var column = $("#portfolio-column"), 
+        items  = $(this);
+
+    items.each(function (index, element) {
+      TweenMax.to(element, .5, {x: 0, y:0, scale: 1, ease:Power2.easeInOut}); 
     });
   
   });
-
-
-// $(document.body).on('click', '.portfolio-item', function () {
-//       $(this).addClass("hover");
-//       var test = $('#misc-2'),
-//         test2 = $('#tv-spots'),
-//         tl   = new TimelineLite();
-      
-//     TweenMax.from(test, 1, {z: -20}, {x: -20}, {y: -20});
-// });
- 
-
-
-
-  // $("#offline").hover(function(){
-  //   var element = $('#offline');
-
-  //     $(this).addClass('hover');
-  //     TweenLite.from(element, 1, {x: -200}, {y: -100});
-  // });
-  
 });
 
 // Carousel Functions 

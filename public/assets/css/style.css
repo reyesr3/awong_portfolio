@@ -22,6 +22,7 @@ height:100%;
   position: absolute;
   width: 100%;
   z-index: 10;
+
 }
 
 .navbar-default{
@@ -34,12 +35,12 @@ height:100%;
 
 .navbar-brand {
   color: white !important;
-  margin-left: 10px !important;
+  margin-left: 20px !important;
   margin-top: 15px;
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: bold;
   text-transform: uppercase;
-  font-size: 36px;
+  font-size: 42px;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
@@ -71,9 +72,9 @@ height:100%;
 }
 
 .top-nav-collapse {
-  -webkit-transition: background .9s ease-in-out;
-  -moz-transition: background .9s ease-in-out;
-  transition: background .9s ease-in-out;
+  -webkit-transition: background 1s ease-in-out;
+  -moz-transition: background 1s ease-in-out;
+  transition: background 1s ease-in-out;
   background-color: #000;
   position: static;
   z-index: 0;
@@ -109,58 +110,90 @@ background-repeat: none !important;
   height: 800px;
 }
 
-.random-div {
-  position: absolute;
+.portfolio-column {
+  width: 100%;
 }
 
-
 #portfolio-content{
-  margin-top: 200px;
-  height: 900px;
+  margin-top: 10%;
 }
 
 #portfolio-content li {
-  background-color: red;
-  border-radius: 2px;
   display: inline-block;
-  height: 300px;
-  margin-right: 5px;
-  margin-left: 5px;
-  width: 160px;
+  height: 360px;
   position: relative;
-
+  width: 146px;
 }
+
+#portfolio-content li:nth-child(4) {
+  z-index: 3;
+} 
+
+#portfolio-content li:nth-child(5) {
+  z-index: 2;
+} 
+
+  #portfolio-content li h4{
+    color: #D3D3D3;
+    font-size: 95%;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
 
 .portfolio-content:first-child {
   margin-left: 60px;
 }
 
+
+.portfolio-item {
+  background-color: red;
+  border-radius: 2px;
+  border: 1px solid #D3D3D3;
+  height: 320px;
+  margin: 0 auto;
+  width: 140px;
+}
+
+#trailers{
+  background-image: url('http://cache2.allpostersimages.com/p/LRG/98/9834/DS4Y500Z/posters/star-wars-rogue-one-jyn-rebel-menace.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 #tv-spots {
-  -webkit-animation-delay: .5s;
-  -moz-animation-delay: .5s;
-  animation-delay: .5s;
-  z-index: 2;
+  background-image: url('http://imgc.allpostersimages.com/images/P-473-488-90/98/9834/XO4Y500Z/posters/star-wars-rogue-one-force-of-the-empire.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 #online {
-  -webkit-animation-delay: 1s;
-  -moz-animation-delay: 1s;
-  animation-delay: 1s;
+  background-image: url('http://imgc.allpostersimages.com/images/P-473-488-90/98/9834/YO4Y500Z/posters/star-wars-rogue-one-siege-advance.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 #offline {
-  -webkit-animation-delay: 1s;
-  -moz-animation-delay: 1s;
-  animation-delay: 1s;
+  background-image: url('  http://imgc.allpostersimages.com/images/P-473-488-90/98/9834/NO4Y500Z/posters/star-wars-rogue-one-rebel-trio.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #misc {
-  -webkit-animation-delay: .5s;
-  -moz-animation-delay: .5s;
-  animation-delay: .5s;
+  background-image: url('http://imgc.allpostersimages.com/images/P-473-488-90/98/9834/5S4Y500Z/posters/star-wars-rogue-one-k-2so.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
-
+#misc-2 {
+  background-image: url('http://imgc.allpostersimages.com/images/P-473-488-90/98/9834/OO4Y500Z/posters/star-wars-rogue-one-empire-in-command.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 
 #box-row div{
@@ -174,31 +207,6 @@ background-repeat: none !important;
 
 #box-content {
   position: absolute;
-}
-
-.hover {
-  z-index: 5;
-  background-color: yellow !important; 
-}
-
-
-/* ************** */
-#trans3DDemo {
-  position:absolute;
-  top:70px;
-  left:240px;
-  width:240px;
-}
-
-#trans3DBoxes div {
-  position:relative;
-  width:60px;
-  height:60px;
-  background-color:#f60;
-  margin-right:10px;
-  margin-bottom:10px;
-  border:solid 2px #FFF;
-  display:inline-block;
 }
 
 
