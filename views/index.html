@@ -1,5 +1,7 @@
 <!doctype html>
+<html lang="en-us">
 <head>
+  <meta charset="utf-8">
 
 	<!-- Normalize CSS -->
 	<link rel="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -9,8 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Condensed:400,700" rel="stylesheet">
-	<!-- Animate CSS -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	
 </head>
 
 <body>
@@ -30,7 +31,15 @@
 		    <div class="collapse navbar-collapse" id="navbar-collapse-1">
 		      <ul class="nav navbar-nav navbar-right text-center">
 		        <li><a href="#" id="about-nav">About</a></li>
-		        <li><a href="#" id="portfolio-nav">Portfolio</a></li>
+			    <li class="dropdown">
+	          		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio</a>
+	          		<ul class="dropdown-menu">
+	            		<li><a href="#" id="trailers-nav">Trailers</a></li>
+	            		<li><a href="#">TV Spots</a></li>
+	            		<li><a href="#">Online</a></li>
+	            		<li><a href="#">Offline</a></li>
+		          	</ul>
+	       	 	</li>
 		        <li><a href="#">Awards</a></li>
 		        <li><a href="#">Contact</a></li>
 		      </ul>
@@ -50,7 +59,7 @@
 		  </ol>
 
 		  <!-- Wrapper for slides -->
-		  <div class="carousel-inner" role="listbox">
+		  <div class="front-page carousel-inner" role="listbox">
 		    <div class="item">
 		        <img src="https://unsplash.it/2000/1250?image=638" data-color="lightblue" alt="First Image">
 		    </div>
@@ -75,13 +84,10 @@
 		  </a>
 		  <a class="right carousel-control" href="#mycarousel" role="button" data-slide="next">
 		    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-		    <span class="sr-only">Next</span>
+		  	<span class="sr-only">Next</span>
 		  </a>
 		</div>
 	</div> <!-- Main-Content -->
-
-
-
 
 <!-- jQuery -->
 <script
@@ -93,12 +99,13 @@
 <!-- Bootstrap -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<!--TweenMax-->
+<!-- TweenMax -->
 <script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js'></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TimelineLite.min.js">
 </script>
 
 <!-- App.js -->
-<script type='text/javascript' src='assets/js/app.js'></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+
 </body>
 </html>

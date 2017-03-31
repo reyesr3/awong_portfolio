@@ -30,11 +30,11 @@ height:100%;
   background-image:none;
   border-color:transparent;
   box-shadow:none;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid #FFF;
 }
 
 .navbar-brand {
-  color: white !important;
+  color: #FFF !important;
   margin-left: 20px !important;
   margin-top: 15px;
   font-family: 'Roboto Condensed', sans-serif;
@@ -44,12 +44,12 @@ height:100%;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
-  background-color: white;
+  background-color: #FFF;
 }  
 
 
 .navbar-default .navbar-nav > li > a {
-  color: white;
+  color: #FFF;
   font-family: 'Lato', sans-serif;
   font-weight: bold;
   padding-top: 30px;
@@ -58,7 +58,7 @@ height:100%;
 }
 
 .current-tab {
-  background-color: white;
+  background-color: #FFF;
   color: #333;
 }
 
@@ -71,11 +71,31 @@ height:100%;
   min-width: 0 !important;
 }
 
+.dropdown-menu {
+  border: 1px solid #FFF;
+}
+
+.dropdown-toggle:active, .open .dropdown-toggle {
+  background:#FFF !important;
+  color:#000 !important;
+  border-radius: 0;
+}
+
+.dropdown-menu a {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  padding-top: 10px !important;
+  padding-left: 10px !important;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+
 .top-nav-collapse {
   -webkit-transition: background 1s ease-in-out;
   -moz-transition: background 1s ease-in-out;
   transition: background 1s ease-in-out;
-  background-color: #000;
+  background-color: #222222;
   position: static;
   z-index: 0;
   border-radius: 0;
@@ -106,15 +126,15 @@ background-repeat: none !important;
 *   Portfolio
 -----------------------------------------------*/
 #portfolio{
-  background-color: #000;
+  background-color: #222222;
   height: 800px;
 }
 
 .portfolio-column {
-  width: 100%;
+  width: 80%;
 }
 
-#portfolio-content{
+#portfolio-content {
   margin-top: 10%;
 }
 
@@ -177,7 +197,7 @@ background-repeat: none !important;
 }
 
 #offline {
-  background-image: url('  http://imgc.allpostersimages.com/images/P-473-488-90/98/9834/NO4Y500Z/posters/star-wars-rogue-one-rebel-trio.jpg');
+  background-image: url('http://imgc.allpostersimages.com/images/P-473-488-90/98/9834/NO4Y500Z/posters/star-wars-rogue-one-rebel-trio.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -195,6 +215,17 @@ background-repeat: none !important;
   background-size: cover;
 }
 
+#misc-3 {
+  background-image: url('http://imgc.allpostersimages.com/images/P-473-488-90/98/9834/TO4Y500Z/posters/star-wars-rogue-one-assembled-for-action.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#misc-4{
+  background-image: url('http://imgc.allpostersimages.com/images/P-473-488-90/98/9834/UO4Y500Z/posters/star-wars-rogue-one-alliance-strike-force.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 #box-row div{
   width: 200px;
@@ -209,6 +240,83 @@ background-repeat: none !important;
   position: absolute;
 }
 
+/*-------------*/
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,900,700);
+
+
+.carousel-inner { margin: auto; width: 100%; }
+.carousel-control        { width:  4%; }
+.carousel-control.left,
+.carousel-control.right {
+  background-image:none;
+}
+ 
+.glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {
+  margin-top:-10px;
+  margin-left: -10px;
+  color: #FFF;
+}
+
+.content-page .carousel-inner {
+  a {
+    display:table-cell;
+    height: 180px;
+    width: 200px;
+    vertical-align: middle;
+  }
+  img {
+    max-height: 150px;
+    margin: auto auto;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .content-page .carousel-inner > .item.next,
+  .content-page .carousel-inner > .item.active.right {
+      left: 0;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+  }
+  .content-page .carousel-inner > .item.prev,
+  .content-page .carousel-inner > .item.active.left {
+      left: 0;
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+  }
+
+}
+@media (min-width: 767px) and (max-width: 992px ) {
+  .content-page .carousel-inner > .item.next,
+  .content-page .carousel-inner > .item.active.right {
+      left: 0;
+      -webkit-transform: translate3d(50%, 0, 0);
+      transform: translate3d(50%, 0, 0);
+  }
+  .content-page .carousel-inner > .item.prev,
+  .content-page .carousel-inner > .item.active.left {
+      left: 0;
+      -webkit-transform: translate3d(-50%, 0, 0);
+      transform: translate3d(-50%, 0, 0);
+  }
+}
+@media (min-width: 992px ) {
+  
+  .content-page .carousel-inner > .item.next,
+  .content-page .carousel-inner > .item.active.right {
+      left: 0;
+      -webkit-transform: translate3d(16.7%, 0, 0);
+      transform: translate3d(16.7%, 0, 0);
+  }
+  .content-page .carousel-inner > .item.prev,
+  .content-page .carousel-inner > .item.active.left {
+      left: 0;
+      -webkit-transform: translate3d(-16.7%, 0, 0);
+      transform: translate3d(-16.7%, 0, 0);
+  }
+  
+}
 
 
 

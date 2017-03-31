@@ -1,0 +1,85 @@
+<div id="portfolio" class="container-fluid">
+<!-- 	<div class="row">
+		<div class="col-md-6 portfolio-column center-block">
+			<ul id="portfolio-content">
+				<li class="portfolio-left">
+					<div id="trailers" class="portfolio-item"></div>
+				</li>
+				<li class="portfolio-left">
+					<div id="tv-spots" class="portfolio-item"></div>
+				</li>
+				<li class="portfolio-left center">
+					<div id="online" class="portfolio-item"></div>
+				</li>
+				<li class="portfolio-right center">
+					<div id="offline" class="portfolio-item"></div>
+				</li>
+				<li class="portfolio-right">
+					<div id="misc" class="portfolio-item"></div>
+				</li>
+				<li class="portfolio-right">
+					<div id="misc-2" class="portfolio-item"></div>
+				</li>				
+			</ul>
+		</div>
+	</div> -->
+
+
+	<div class="col-md-10 col-md-offset-1">
+		<div class="carousel slide" data-ride="carousel" data-type="multi" data-interval="6000" id="myCarousel">
+		  <div class="content-page carousel-inner portfolio-right">
+		    <div class="item active">
+		      <div class="col-md-2 col-sm-6 col-xs-12"><a href="#"><div id="trailers" class="portfolio-item"></div></a></div>
+		    </div>
+		    <div class="item">
+		      <div class="col-md-2 col-sm-6 col-xs-12"><a href="#"><div id="tv-spots" class="portfolio-item"></div></a></div>
+		    </div>
+		    <div class="item">
+		      <div class="col-md-2 col-sm-6 col-xs-12"><a href="#"><div id="online" class="portfolio-item"></div></a></div>
+		    </div>
+		    <div class="item">
+		      <div class="col-md-2 col-sm-6 col-xs-12"><a href="#"><div id="offline" class="portfolio-item"></div></a></div>
+		    </div>
+		    <div class="item">
+		      <div class="col-md-2 col-sm-6 col-xs-12"><a href="#"><div id="misc" class="portfolio-item"></div></a></div>
+		    </div>
+		    <div class="item">
+		      <div class="col-md-2 col-sm-6 col-xs-12"><a href="#"><div id="misc-2" class="portfolio-item"></div></a></div>
+		    </div>
+		    <div class="item">
+		      <div class="col-md-2 col-sm-6 col-xs-12"><a href="#"><div id="misc-3" class="portfolio-item"></div></a></div>
+		    </div>
+		    <div class="item">
+		      <div class="col-md-2 col-sm-6 col-xs-12"><a href="#modal"><div id="sidefall" class="portfolio-item list-group-item"></div></a></div>
+		    </div>
+		  </div>
+		  <a class="content-page left carousel-control" href="#myCarousel" data-slide="prev"><i class="content-page glyphicon glyphicon-chevron-left"></i></a>
+		  <a class="content-page right carousel-control" href="#myCarousel" data-slide="next"><i class="content-page glyphicon glyphicon-chevron-right"></i></a>
+		</div>
+	</div>
+
+    <div id="modal" style="display: none" class="modal-example-content">
+      <div class="modal-example-header">
+        <button type="button" class="close" onclick="$.fn.custombox('close');">&times;</button>
+        <h4>jQuery Custombox</h4>
+      </div>
+      <div class="modal-example-body">
+        <p>HEYYYLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      </div>
+    </div>
+
+
+<!-- Custombox JS -->
+<script type="text/javascript" src="assets/js/custom1.js"></script>
+
+    <script>
+      $('#sidefall').on('click', function () {
+        $.fn.custombox( this, {
+          effect: 'door'
+        });
+        return false;
+      });
+    </script>
+
+
+</div>

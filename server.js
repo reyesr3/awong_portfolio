@@ -21,6 +21,10 @@ router.get("/contact",function(req,res){
   res.sendFile(path + "contact.html");
 });
 
+router.get("/test",function(req,res){
+  res.sendFile(path + "test.html");
+});
+
 
 // prepare server
 app.use(express.static(__dirname + '/'));

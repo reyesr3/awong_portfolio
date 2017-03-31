@@ -1,4 +1,5 @@
 
+// Navbar transitions to black background
 function collapseNavbar() {
     $(".navbar-nav li a" ).on( "click", function() {
         if(!$(".navbar-default").hasClass("top-nav-collapse")) {
@@ -7,6 +8,7 @@ function collapseNavbar() {
     });
 }
 
+// Navbar tab is white when active
 function currentTab() {
     $(".navbar-nav li" ).on( "click", function() {
         $(".navbar-nav li").removeClass("current-tab");
@@ -20,73 +22,107 @@ $(document).ready(function(){
     collapseNavbar();
     currentTab();
 
-    // Navbar Functions
-    $("#portfolio-nav").click(function(e){
-        var script = document.createElement('script');
-        
-        e.preventDefault();
-        $.ajax({url: "/views/portfolio.html", success: function(result){
-            $(".main-content").addClass('move-down');
-            $(".main-content").html(result);
-        }});
+    // Navbar Functions // 
 
-        script.src = "assets/js/app.js";
-        script.id = "app";
-
-        $('body').append(script);
-    });
-
-  // Portfolio Functions
-
-  // Animation Intro 
-    var port_left = $('.portfolio-left'),
-        port_right = $('.portfolio-right')
+      // Dropdown Menu
+      $(document.body).on('mouseenter', '.dropdown', function () {
+          $('.dropdown-menu', this).not('.in .dropdown-menu').slideDown('fast');
+          $(this).toggleClass('open');       
+      });
       
-    port_left.each(function (index, element) {
-        TweenMax.from(element, 1.7, {x:200, autoAlpha:0, scale: .15, ease:Expo.easeInOut});
+      $(document.body).on('mouseleave', '.dropdown', function () {    
+          $('.dropdown-menu', this).not('.in .dropdown-menu').slideUp('fast');
+          $(this).toggleClass('open');       
+      });
+
+      // Loads Trailer Page
+      $("#trailers-nav").click(function(e){
+          var script = document.createElement('script');
+          
+          e.preventDefault();
+          $.ajax({url: "/views/trailers.html", success: function(result){
+              $(".main-content").addClass('move-down');
+              $(".main-content").html(result);
+          }});
+
+          script.src = "assets/js/app.js";
+          script.id = "app";
+
+          $('body').append(script);
     });
 
-    port_right.each(function (index, element) {
-        TweenMax.from(element, 1.7, {x:-200, autoAlpha:0, scale: .15, ease:Expo.easeInOut});
-    });
+
+  // Portfolio Functions //
+
+    // Animation Intro 
+      var port_left = $('.portfolio-left'),
+          port_right = $('.portfolio-right')
+        
+      port_left.each(function (index, element) {
+          TweenMax.from(element, 1.8, {x:20, autoAlpha:0, scale: .15, ease:Expo.easeInOut});
+      });
+
+      port_right.each(function (index, element) {
+          TweenMax.from(element, 1.8, {x:-20, autoAlpha:0, scale: .15, ease:Expo.easeInOut});
+      });
 
   // Hover Animation 
-  $(document.body).on('mouseover', '#portfolio-content li', function () {
-    var column = $("#porfolio-column"), 
-        items  = $(this);
+  // $(document.body).on('mouseover', '#portfolio-content li', function () {
+  //   var column = $("#porfolio-column"), 
+  //       items  = $(this);
 
 
-    items.each(function (index, element) {
-        // TweenMax.to(items,0, {className:'+=hover'}); 
+  //   items.each(function (index, element) {
+  //       // TweenMax.to(items,0, {className:'+=hover'}); 
 
-        if($(element).hasClass('portfolio-left')) {
-            if($(element).hasClass('center')) { 
-                TweenMax.to(element, .8, {x: -10, y:-10, scale: 1.15, ease:Expo.easeInOut});
-            } else { 
-                TweenMax.to(element, .8, {x: -30, y:-10, scale: 1.15, ease:Expo.easeInOut});
-            }
-        } else {
-            if($(element).hasClass('center')) { 
-                TweenMax.to(element, .8, {x: 10, y:-10, scale: 1.15, ease:Expo.easeInOut});
-            } else {
-                TweenMax.to(element, .8, {x: 30, y: -10, scale: 1.15, ease:Expo.easeInOut}); 
-            }
-        }});
-
-        // TweenMax.to(items, 0, {className:'-=hover'}); 
+  //       if($(element).hasClass('portfolio-left')) {
+  //           if($(element).hasClass('center')) { 
+  //               TweenMax.to(element, .8, {x: -10, y:-10, scale: 1.15, ease:Expo.easeInOut});
+  //           } else { 
+  //               TweenMax.to(element, .8, {x: -30, y:-10, scale: 1.15, ease:Expo.easeInOut});
+  //           }
+  //       } else {
+  //           if($(element).hasClass('center')) { 
+  //               TweenMax.to(element, .8, {x: 10, y:-10, scale: 1.15, ease:Expo.easeInOut});
+  //           } else {
+  //               TweenMax.to(element, .8, {x: 30, y: -10, scale: 1.15, ease:Expo.easeInOut}); 
+  //           }
+  //       }});
   
-    });
+  //   });
 
-    $(document.body).on('mouseleave', '#portfolio-content li', function () {
-    var column = $("#portfolio-column"), 
-        items  = $(this);
+  //   $(document.body).on('mouseleave', '#portfolio-content li', function () {
+  //   var column = $("#portfolio-column"), 
+  //       items  = $(this);
 
-    items.each(function (index, element) {
-      TweenMax.to(element, .5, {x: 0, y:0, scale: 1, ease:Power2.easeInOut}); 
-    });
+  //   items.each(function (index, element) {
+  //     TweenMax.to(element, .5, {x: 0, y:0, scale: 1, ease:Power2.easeInOut}); 
+  //   });
   
+  // });
+
+
+  // Portfolio Carousel
+  $('.carousel[data-type="multi"] .item').each(function(){
+    var next = $(this).next();
+    if (!next.length) {
+      next = $(this).siblings(':first');
+    }
+    next.children(':first-child').clone().appendTo($(this));
+
+    for (var i=0;i<4;i++) {
+      next=next.next();
+      if (!next.length) {
+        next = $(this).siblings(':first');
+      }
+      
+      next.children(':first-child').clone().appendTo($(this));
+    }
   });
+
 });
+
+
 
 // Carousel Functions 
 
