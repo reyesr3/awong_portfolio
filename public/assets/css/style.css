@@ -360,14 +360,17 @@ background-repeat: none !important;
   font-size: 1.2em;
 }
 
+#about-description p {
+  margin-top: 20px;
+}
 
 #about-description p, img {
   display: inline-block;
 }
 
+
 #about-description img {
-  height: 30%;
-  width: 30%;
+
 }
 
 /*******/
