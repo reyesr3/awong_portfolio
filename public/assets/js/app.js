@@ -1,12 +1,12 @@
 
 // Navbar transitions to black background
-function collapseNavbar() {
-    $(".navbar-nav li a" ).on( "click", function() {
-        if(!$(".navbar-default").hasClass("top-nav-collapse")) {
-            $(".navbar-default").addClass("top-nav-collapse");
-        };
-    });
-}
+// function collapseNavbar() {
+//     $(".navbar-nav li a" ).on( "click", function() {
+//         if(!$(".navbar-default").hasClass("top-nav-collapse")) {
+//             $(".navbar-default").addClass("top-nav-collapse");
+//         };
+//     });
+// }
 
 // Navbar tab is white when active
 function currentTab() {
@@ -19,7 +19,7 @@ function currentTab() {
 }
 
 $(document).ready(function(){
-    collapseNavbar();
+    // collapseNavbar();
     currentTab();
 
     // Navbar Functions // 
@@ -37,10 +37,31 @@ $(document).ready(function(){
 
       // Loads Trailer Page
       $("#trailers-nav").click(function(e){
-          var script = document.createElement('script');
+          var script   = document.createElement('script'),
+              scriptAM = document.createElement('script');
           
           e.preventDefault();
           $.ajax({url: "/views/trailers.html", success: function(result){
+              $(".main-content").addClass('move-down');
+              $(".main-content").html(result);
+          }});
+
+          script.src = "assets/js/app.js";
+          script.id = "app";
+
+          scriptAM.src = "../public/assets/am/js/jquery.adaptive-modal.js";
+
+          $('body').append(script);
+          $('body').append(scriptAM);
+    });
+
+
+      // Loads About Page
+      $("#about-nav").click(function(e){
+          var script   = document.createElement('script');
+
+          e.preventDefault();
+          $.ajax({url: "/views/about.html", success: function(result){
               $(".main-content").addClass('move-down');
               $(".main-content").html(result);
           }});

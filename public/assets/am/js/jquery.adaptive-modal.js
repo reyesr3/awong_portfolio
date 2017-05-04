@@ -17,7 +17,7 @@
   
   var defaults = {
     elementAnimateTime: 100,
-    customBgColor: "#333",
+    customBgColor: "#FFF",
     remoteUrl: false,
     elementAnimateIn: "scaleShow",
     elementAnimateOut: "scaleHide",
@@ -123,7 +123,8 @@
             posX = el.offset().left
             posY = el.offset().top - $(window).scrollTop(),
             styles = el.getStyleObject(),
-            remote = "";
+            remote = "",
+            addBorder = "1px solid white";
             
         // Prevent animation overlap when there's an ongoing animation    
         if (el.hasClass("am-animating")) {
@@ -133,7 +134,7 @@
         if (typeof settings.beforeAnimate == 'function') settings.beforeAnimate(el, "open");
         
         // Fallback default background color in case the button has no background color available
-        if (el.css('backgroundColor') == "rgba(0 ,0 ,0 ,0)") customBgColor = settings.customBgColor;
+        if (el.css('backgroundColor') == "rgba( ,0 ,0 ,0)") customBgColor = settings.customBgColor;
      
         bgColor = customBgColor
         
@@ -301,7 +302,7 @@
         }
         );
         
-        // Animate elemtn directly under the modal one by one
+        // Animate element directly under the modal one by one
         $(".am-back > .am-modal-content > *").each(function() {
       
           animations.push({ 
@@ -382,7 +383,8 @@
               height: h,
               top: posY,
               left: posX,
-              minHeight: 0
+              minHeight: 0,
+              border: addBorder
             });
           } 
         },

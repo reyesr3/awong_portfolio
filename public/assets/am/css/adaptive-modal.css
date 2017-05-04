@@ -13,10 +13,12 @@
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   overflow: auto;
+  
 }
 
 .am-close-backdrop {
   position: absolute;
+  background-color: #100C08;
   top: 0;
   left: 0;
   width: 100%;
@@ -46,6 +48,10 @@
   -moz-perspective: 1000;
   -o-perspective: 1000;
   perspective: 1000;
+}
+
+.am-modal a {
+  text-decoration: none;
 }
 
 .am-modal.am-flipped .am-wrapper, .am-modal.am-flipped .am-wrapper {
@@ -100,21 +106,47 @@
   visibility: hidden;
 }
 
+
 .am-back > .am-modal-content > * {
   visibility: hidden;
 }
 
+.am-modal-content .video-player {
+  display: inline-block;
+}
+
+.am-modal-content .video-details {
+  display: inline-block;
+  float: right;
+  line-height: 100%;
+  margin: 20px 10px 10px 0px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+
+.am-modal-content .video-details .head{
+  font-weight: bold;
+}
+
+.am-modal-content .video-details .txt{
+  margin-bottom: 20px;
+}
+
+
 .am-expanded.am-modal {
-  width: 800px;
+  width: 960px;
   top: 50px;
   margin-bottom: 50px;
   left: 50%;
-  margin-left: -400px;
+  margin-left: -480px;
 }
 
 .am-expanded.am-back {
-  width: 800px;
-  background-color: purple !important;
+  width: 960px;
+  background-color: #000 !important;
+  border-radius: 5px;
+  border: 1px solid #FFF;
 }
 
 .am-sample {
@@ -125,7 +157,7 @@
 }
 
 .am-close {
-  color: white;
+  color: #FFF;
   width: 25px;
   height: 25px;
   line-height: 100%;
@@ -138,10 +170,10 @@
   font-size: 24px;
 }
 .am-close:visited {
-  color: white;
+  color: #FFF;
 }
 .am-close:hover, .am-close:active {
-  color: white;
+  color: ;
   opacity: 1;
 }
 

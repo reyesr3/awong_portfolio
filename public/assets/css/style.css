@@ -12,10 +12,10 @@ min-height:100%;
 height:100%;
 }
 
-
 /*-----------------------------------------------
 *   Navbar
 -----------------------------------------------*/
+
 .navbar {
 /*  margin-top: 10px;*/
   margin-bottom: 0px;
@@ -26,11 +26,14 @@ height:100%;
 }
 
 .navbar-default{
-  background:transparent;
+  background: #222222;
   background-image:none;
   border-color:transparent;
   box-shadow:none;
   border-bottom: 2px solid #FFF;
+  position: static;
+  z-index: 0;
+  border-radius: 0;
 }
 
 .navbar-brand {
@@ -91,7 +94,7 @@ height:100%;
 }
 
 
-.top-nav-collapse {
+/*.top-nav-collapse {
   -webkit-transition: background 1s ease-in-out;
   -moz-transition: background 1s ease-in-out;
   transition: background 1s ease-in-out;
@@ -99,13 +102,13 @@ height:100%;
   position: static;
   z-index: 0;
   border-radius: 0;
-}
+}*/
 
 
 
 
 /*-----------------------------------------------
-*   Carousel
+*   Home Page Carousel
 -----------------------------------------------*/
 h3 {
   display: inline-block;
@@ -174,6 +177,20 @@ background-repeat: none !important;
   height: 320px;
   margin: 0 auto;
   width: 140px;
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  filter: grayscale(00%);
+  transition: all 0.2s ease;
+}
+
+.portfolio-item:hover  {
+  -webkit-filter: grayscale(90%);
+  -moz-filter: grayscale(90%);
+  filter: grayscale(90%);
+}
+
+.item a {
+  outline: none !important;
 }
 
 #trailers{
@@ -240,7 +257,7 @@ background-repeat: none !important;
   position: absolute;
 }
 
-/*-------------*/
+/* Portfolio Carousel */
 
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,900,700);
 
@@ -320,8 +337,169 @@ background-repeat: none !important;
 
 
 
+/*-----------------------------------------------
+*   About Page
+-----------------------------------------------*/
+
+#about-content {
+  background-image: url('https://images.unsplash.com/photo-1484708442705-0e9ee9bf0825');
+  background-position: 0 -60px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 800px;
+  padding-left: 0;
+}
+
+#about-description {
+  font-weight: 100; 
+  background: rgba(0,0,0,0.4);
+  border-radius: 2px;
+  padding: 2em;
+  width: 60%;
+  float: left;
+  font-size: 1.2em;
+}
 
 
+#about-description p, img {
+  display: inline-block;
+}
+
+#about-description img {
+  height: 30%;
+  width: 30%;
+}
+
+/*******/
+body, html {
+      margin: 0;
+      -webkit-font-smoothing: antialiased;
+      background:#fff;
+      text-align: center;
+      -webkit-transition: opacity 400ms;
+      -moz-transition: opacity 400ms;
+      transition: opacity 400ms;
+}
+
+body .header{
+  color: #000;
+}
+html {
+min-height: 100%;
+    }
+body {
+  padding: 0;
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+}
+.main  {
+  margin: 25px auto;
+  max-width: 980px;
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+.main p {
+  color: #000;
+  text-align: left;
+  font-size: 18px;
+  line-height: 180%;
+  font-weight: 100;
+}
+
+.nav-top a {
+  color: #000;
+}
+
+/* ALL DEMO */
+
+.am-modal-content {
+  padding: 20px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.main p {
+  margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 140%;
+  color: #333;
+}
+.main p a {
+  background: #3E5C9A;
+  display: inline-block;
+  font-weight: bold;
+  color: white;
+  padding: 2px 5px;
+}
+.main .btns {
+  display: block;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.main .btns a {
+  font-weight: bold;
+  color: white;
+  padding: 20px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  text-align: center;
+  display: inline-block;
+  background: #FF6347;
+}
+
+form {
+  max-width: 600px;
+  margin: 10px auto;
+}
+
+form .btns a {
+  margin-top: 25px;
+  background: white;
+  font-weight: bold;
+  color: #1ABC9C;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  text-align: center;
+  display: inline-block;
+}
+form input {
+  color: white;
+  border-radius: 3px;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: none;
+  font-size: 16px;
+}
+
+.demo4 .main p a {
+  background: #E67F22;
+}
+
+body .am-expanded.am-modal.modal1 {
+  width: 400px;
+  margin-left: -200px;
+}
+
+body .am-expanded.am-modal.modal1 .am-expanded.am-back {
+  width: 400px;
+  border-radius: 5px;
+}
+body .am-expanded.am-modal.modal3 {
+  width: 640px;
+  margin-left: -320px;
+}
+
+body .am-expanded.am-modal.modal3 .am-expanded.am-back {
+  width: 640px;
+  padding: 0;
+  border-radius: 5px;
+}
 
 
 
