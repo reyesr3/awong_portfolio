@@ -9,6 +9,10 @@
 // }
 
 // Navbar tab is white when active
+
+
+var hasLooped = false;
+
 function currentTab() {
     $(".navbar-nav li" ).on( "click", function() {
         $(".navbar-nav li").removeClass("current-tab");
@@ -35,30 +39,32 @@ $(document).ready(function(){
           $(this).toggleClass('open');       
       });
 
-      // Loads Trailer Page
-      $("#trailers-nav").click(function(e){
-          var script   = document.createElement('script'),
-              scriptAM = document.createElement('script');
-          
-          e.preventDefault();
-          $.ajax({url: "/views/trailers.html", success: function(result){
-              $(".main-content").addClass('move-down');
-              $(".main-content").html(result);
-          }});
+    // Loads Trailer Page
+    $(document.body).on('click', '#trailers-nav', function(e){
+        $('.main-content').empty(); // Remove old content
+        console.log('ERERE');
+        var script   = document.createElement('script');
+            scriptAM = document.createElement('script');
 
-          script.src = "assets/js/app.js";
-          script.id = "app";
+        $.ajax({url: "/views/trailers.html", success: function(result){
+            // $(".main-content").addClass('move-down');
+            $(".main-content").html(result);
+        }});
 
-          scriptAM.src = "../public/assets/am/js/jquery.adaptive-modal.js";
+        script.src = "assets/js/app.js";
+        script.id = "app";
+        scriptAM.src = "../public/assets/am/js/jquery.adaptive-modal.js";
+        scriptAM.id = "adaptive_mod";
 
-          $('body').append(script);
-          $('body').append(scriptAM);
-    });
+        $('.main-content').append(script);
+        $('.main-content').append(scriptAM);
+            
+   });
 
 
-      // Loads About Page
-      $("#about-nav").click(function(e){
-          var script   = document.createElement('script');
+    // Loads About Page
+    $(document.body).on('click', '#about-nav', function(e){
+          // var script = document.createElement('script');
 
           e.preventDefault();
           $.ajax({url: "/views/about.html", success: function(result){
@@ -66,26 +72,55 @@ $(document).ready(function(){
               $(".main-content").html(result);
           }});
 
-          script.src = "assets/js/app.js";
-          script.id = "app";
+          // script.src = "assets/js/app.js";
+          // script.id = "app";
 
-          $('body').append(script);
+          // $('.main-content').append(script);
     });
 
 
-  // Portfolio Functions //
+
+    // Loads Contact Page
+    $(document.body).on('click', '#contact-nav', function(e){
+          var script = document.createElement('script');
+
+          e.preventDefault();
+          $.ajax({url: "/views/contact.html", success: function(result){
+              $(".main-content").addClass('move-down');
+              $(".main-content").html(result);
+          }});
+
+          script.src = "assets/js/app.js";
+          script.id = "app";
+
+          $('.main-content').append(script);
+    });
+
+
+  // About Page Functions //
+
+    var about_content = $('#about-description');
+
+    about_content.each(function (index, element) {
+        TweenMax.from(element, 1, {x: -900, ease: Power3.easeOut});
+    });
+
+
+
+  // Portfolio Pages Functions //
 
     // Animation Intro 
-      var port_left = $('.portfolio-left'),
-          port_right = $('.portfolio-right')
-        
-      port_left.each(function (index, element) {
-          TweenMax.from(element, 1.8, {x:20, autoAlpha:0, scale: .15, ease:Expo.easeInOut});
-      });
 
-      port_right.each(function (index, element) {
-          TweenMax.from(element, 1.8, {x:-20, autoAlpha:0, scale: .15, ease:Expo.easeInOut});
-      });
+    // var port_left = $('.portfolio-left'),
+    //     port_right = $('.portfolio-right');
+        
+    // port_left.each(function (index, element) {
+    //     TweenMax.from(element, 1.5, {y:20, autoAlpha:0, scale: .15, ease:Expo.easeInOut});
+    // });
+
+    // port_right.each(function (index, element) {
+    //     TweenMax.from(element, 1.5, {y:-20, autoAlpha:0, scale: .15, ease:Expo.easeInOut});
+    // });
 
   // Hover Animation 
   // $(document.body).on('mouseover', '#portfolio-content li', function () {
@@ -123,29 +158,32 @@ $(document).ready(function(){
   // });
 
 
-  // Portfolio Carousel
-  $('.carousel[data-type="multi"] .item').each(function(){
-    var next = $(this).next();
-    if (!next.length) {
-      next = $(this).siblings(':first');
-    }
-    next.children(':first-child').clone().appendTo($(this));
+    // Portfolio Carousel
 
-    for (var i=0;i<4;i++) {
-      next=next.next();
-      if (!next.length) {
-        next = $(this).siblings(':first');
-      }
-      
-      next.children(':first-child').clone().appendTo($(this));
+    if(!hasLooped){
+      $('.carousel[data-type="multi"] .item').each(function(){
+        var next = $(this).next();
+        if (!next.length) {
+          next = $(this).siblings(':first');
+        }
+        next.children(':first-child').clone().appendTo($(this));
+
+        for (var i=0;i<4;i++) {
+          next=next.next();
+          if (!next.length) {
+            next = $(this).siblings(':first');
+          }
+          
+          next.children(':first-child').clone().appendTo($(this));
+        }
+      });
+      hasLooped = true;
     }
-  });
 
 });
 
 
-
-// Carousel Functions 
+// Home Page Carousel Functions 
 
 var $item = $('.carousel .item'); 
 var $wHeight = $(window).height();
